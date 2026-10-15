@@ -21,4 +21,4 @@ class UserRepository(BaseRepository):
 
         result = await self.db.scalars(stmt)
 
-        return result.all()
+        return result.all() 
