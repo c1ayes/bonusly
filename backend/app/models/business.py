@@ -14,3 +14,6 @@ class Business(Base):
     user_businesses:Mapped[list["UserBusiness"]] = relationship(
         back_populates="business"
     )
+    rewards: Mapped[list["Reward"]] = relationship(
+        back_populates="business"
+    )

@@ -1,5 +1,6 @@
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
+from sqlalchemy.orm import selectinload
 
 
 from app.models.user import User
@@ -16,6 +17,7 @@ class UserRepository(BaseRepository):
     async def get_user_businesses(self, user_id:int):
         stmt = (
             select(UserBusiness)
+            .options(selectinload(UserBusiness.business))
             .where(UserBusiness.user_id == user_id)
         )
 

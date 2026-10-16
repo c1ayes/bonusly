@@ -15,4 +15,4 @@ class User(Base):
     
     user_businesses: Mapped[list["UserBusiness"]] = relationship(
         back_populates="user"
-    )
+    )   
